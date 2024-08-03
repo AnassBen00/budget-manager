@@ -1,9 +1,5 @@
 @import '../../main-styles.scss';
 
-body{
-    background-color: white !important;
-}
-
 .top-bar{
     display: flex;
     width: 100%;
@@ -59,4 +55,8 @@ body{
         width: 680px;
         background: white;
     }
+}
+
+.hr{
+    background-color: rgb(148, 143, 143);
 }
