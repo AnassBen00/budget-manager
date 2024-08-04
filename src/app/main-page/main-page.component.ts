@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { AddItemFormComponent } from "../add-item-form/add-item-form.component";
-import { BudgetItemListComponent } from "../budget-item-list/budget-item-list.component";
+import { BudgetItem } from 'src/shared/models/budget-item.model';
 
 @Component({
   selector: 'app-main-page',
-  standalone: true,
-  imports: [AddItemFormComponent, BudgetItemListComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
+
+  items: BudgetItem[] = new Array<BudgetItem>();
+
+  addItem(newitem: BudgetItem){
+    this.items.push(newitem);
+  }
 
 }
