@@ -11,10 +11,13 @@ export class BudgetItemCardComponent {
 
   @Input() item!: BudgetItem;
   @Output() deleteClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() cardClick: EventEmitter<any> = new EventEmitter<any>();
 
   onDeleteButton() {
     this.deleteClick.emit();
   }
 
-
+  onClick() {
+    this.cardClick.emit();
+  }
 }

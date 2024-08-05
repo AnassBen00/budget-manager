@@ -9,6 +9,9 @@ import { AddItemFormComponent } from './add-item-form/add-item-form.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { BudgetItemCardComponent } from './budget-item-list/budget-item-card/budget-item-card.component';
 import { BudgetItemListComponent } from './budget-item-list/budget-item-list.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -16,15 +19,19 @@ import { BudgetItemListComponent } from './budget-item-list/budget-item-list.com
     AddItemFormComponent,
     MainPageComponent,
     BudgetItemCardComponent,
-    BudgetItemListComponent
+    BudgetItemListComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
