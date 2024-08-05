@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BudgetItem } from 'src/shared/models/budget-item.model';
 
 @Component({
   selector: 'app-budget-item-card',
@@ -8,7 +9,12 @@ import { Component, Input } from '@angular/core';
 })
 export class BudgetItemCardComponent {
 
-  @Input() isIncome = true;
+  @Input() item!: BudgetItem;
+  @Output() deleteClick: EventEmitter<any> = new EventEmitter<any>();
+
+  onDeleteButton() {
+    this.deleteClick.emit();
+  }
 
 
 }

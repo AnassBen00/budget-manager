@@ -14,4 +14,8 @@ export class MainPageComponent {
     this.items.push(newitem);
   }
 
+  deleteItem(item: BudgetItem){
+    this.items.splice(this.items.indexOf(item),1);
+  }
+
 }

@@ -6,7 +6,9 @@
                 <div *ngFor="let item of itemsArray">
                     <app-budget-item-card 
                     *ngIf="item.amount && item.amount >= 0"
-                    [isIncome]="true" style="margin-bottom: 20px;"></app-budget-item-card>
+                    (deleteClick)="deleteItem(item)"
+                    [item]="item" style="display:block; margin-bottom: 20px;">
+                    </app-budget-item-card>
                 </div>
             </div>
         </div>
@@ -16,7 +18,9 @@
                 <div *ngFor="let item of itemsArray">
                     <app-budget-item-card 
                     *ngIf="item.amount && item.amount<0"
-                    [isIncome]="false" style="margin-bottom: 20px;"></app-budget-item-card>
+                    [item]="item" 
+                    (deleteClick)="deleteItem(item)"
+                    style="display:block; margin-bottom: 20px;"></app-budget-item-card>
                 </div>
             </div>
         </div>   

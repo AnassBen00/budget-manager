@@ -9,10 +9,11 @@ import { BudgetItem } from 'src/shared/models/budget-item.model';
 })
 export class AddItemFormComponent {
 
-  @Input() item: BudgetItem = new BudgetItem('', null);
+  item: BudgetItem = new BudgetItem('', null);
   @Output() formSubmit : EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>
   
   onSubmit(form: NgForm){
     this.formSubmit.emit(form.value);
-}
+    form.reset();
+  }
 }

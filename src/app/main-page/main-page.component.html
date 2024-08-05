@@ -13,4 +13,4 @@
     </div>
 </section>
 <hr style="margin-top: 0%; background-color: rgb(235, 229, 229)">
-<app-budget-item-list [itemsArray]="items"></app-budget-item-list>
+<app-budget-item-list [itemsArray]="items" (delete)="deleteItem($event)"></app-budget-item-list>
