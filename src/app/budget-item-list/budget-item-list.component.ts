@@ -12,6 +12,7 @@ export class BudgetItemListComponent {
 
   @Input() itemsArray!: BudgetItem[];
   @Output() delete: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+  @Output() update: EventEmitter<[BudgetItem, BudgetItem]> = new EventEmitter<[BudgetItem, BudgetItem]>();
 
   constructor(public dialog: MatDialog){}
 
@@ -23,7 +24,6 @@ export class BudgetItemListComponent {
     //Afficher la popup pour modifier un item
     const dialogRef = this.dialog.open(EditItemComponent, 
       {
-        width: '580px',
         data: item
       }
     );
@@ -31,10 +31,9 @@ export class BudgetItemListComponent {
     dialogRef.afterClosed().subscribe(result => {
       // Verifer si result n'est pas null
       if(result){
-        // mettre à jour l'ancien item par le nouveau item
-        this.itemsArray[this.itemsArray.indexOf(item)] = result;
+        this.update.emit([item,result]);
       }
-    })
+    });
   }
 
   
