@@ -1,6 +1,6 @@
 # BudgetManager
 
-This project is budget manager application when we can manage items of income and expenses and total left of the budget.
+This project is a budget management application that allows users to efficiently track and manage their income and expenses. It provides a clear overview of individual transactions and calculates the remaining budget.
 
 ## Development server
 
