@@ -1,6 +1,6 @@
 # BudgetManager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+This project is budget manager application when we can manage items of income and expenses and total left of the budget.
 
 ## Development server
 
